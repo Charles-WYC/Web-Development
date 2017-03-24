@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+   
+   <!-- LoginProcessServlet-->
+   <servlet>
+      <servlet-name>login_process</servlet-name>
+      <servlet-class>servlet.LoginProcessServlet</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>login_process</servlet-name>
+      <url-pattern>/login_process</url-pattern>
+   </servlet-mapping>
+   
+   <!-- AddUserServlet-->
+   <servlet>
+      <servlet-name>addUser</servlet-name>
+      <servlet-class>servlet.AddUserServlet</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>addUser</servlet-name>
+      <url-pattern>/addUser</url-pattern>
+   </servlet-mapping>
+   
+   <!-- FindAllBooks-->
+   <servlet>
+      <servlet-name>findAllBooks</servlet-name>
+      <servlet-class>servlet.FindAllBooks</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>findAllBooks</servlet-name>
+      <url-pattern>/findAllBooks</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>findCart</servlet-name>
+      <servlet-class>servlet.FindCart</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>findCart</servlet-name>
+      <url-pattern>/findCart</url-pattern>
+   </servlet-mapping>   
+   
+   <servlet>
+      <servlet-name>bookDetail</servlet-name>
+      <servlet-class>servlet.BookDetail</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>bookDetail</servlet-name>
+      <url-pattern>/bookDetail</url-pattern>
+   </servlet-mapping>
+      
+   <servlet>
+      <servlet-name>editBookNumberInCart</servlet-name>
+      <servlet-class>servlet.EditBookNumberInCart</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>editBookNumberInCart</servlet-name>
+      <url-pattern>/editBookNumberInCart</url-pattern>
+   </servlet-mapping>  
+    
+   <servlet>
+      <servlet-name>addBookIntoCart</servlet-name>
+      <servlet-class>servlet.AddBookIntoCart</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>addBookIntoCart</servlet-name>
+      <url-pattern>/addBookIntoCart</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>logoutProcess</servlet-name>
+      <servlet-class>servlet.LogoutProcessServlet</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>logoutProcess</servlet-name>
+      <url-pattern>/logoutProcess</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>findIndent</servlet-name>
+      <servlet-class>servlet.FindIndent</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>findIndent</servlet-name>
+      <url-pattern>/findIndent</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>payIndent</servlet-name>
+      <servlet-class>servlet.PayIndent</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>payIndent</servlet-name>
+      <url-pattern>/payIndent</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>submitIndent</servlet-name>
+      <servlet-class>servlet.SubmitIndent</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>submitIndent</servlet-name>
+      <url-pattern>/submitIndent</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>addBook</servlet-name>
+      <servlet-class>servlet.AddBook</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>addBook</servlet-name>
+      <url-pattern>/addBook</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>adminBookDetail</servlet-name>
+      <servlet-class>servlet.AdminBookDetail</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>adminBookDetail</servlet-name>
+      <url-pattern>/adminBookDetail</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>adminFindAllBooks</servlet-name>
+      <servlet-class>servlet.AdminFindAllBooks</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>adminFindAllBooks</servlet-name>
+      <url-pattern>/adminFindAllBooks</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>adminFindAllIndent</servlet-name>
+      <servlet-class>servlet.AdminFindAllIndent</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>adminFindAllIndent</servlet-name>
+      <url-pattern>/adminFindAllIndent</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>adminLogin</servlet-name>
+      <servlet-class>servlet.AdminLoginProcessServlet</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>adminLogin</servlet-name>
+      <url-pattern>/adminLogin</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>confirmIndent</servlet-name>
+      <servlet-class>servlet.ConfirmIndent</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>confirmIndent</servlet-name>
+      <url-pattern>/confirmIndent</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>deleteBook</servlet-name>
+      <servlet-class>servlet.DeleteBookProcess</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>deleteBook</servlet-name>
+      <url-pattern>/deleteBook</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>deleteIndent</servlet-name>
+      <servlet-class>servlet.DeleteIndent</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>deleteIndent</servlet-name>
+      <url-pattern>/deleteIndent</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>deleteUser</servlet-name>
+      <servlet-class>servlet.DeleteUser</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>deleteUser</servlet-name>
+      <url-pattern>/deleteUser</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>deliveryIndent</servlet-name>
+      <servlet-class>servlet.DeliveryIndent</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>deliveryIndent</servlet-name>
+      <url-pattern>/deliveryIndent</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>editAdminInfo</servlet-name>
+      <servlet-class>servlet.EditAdminInfo</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>editAdminInfo</servlet-name>
+      <url-pattern>/editAdminInfo</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>editBookDetail</servlet-name>
+      <servlet-class>servlet.EditBookDetail</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>editBookDetail</servlet-name>
+      <url-pattern>/editBookDetail</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>editBookDetailProcess</servlet-name>
+      <servlet-class>servlet.EditBookDetailProcess</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>editBookDetailProcess</servlet-name>
+      <url-pattern>/editBookDetailProcess</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>editIndentAmount</servlet-name>
+      <servlet-class>servlet.EditIndentAmount</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>editIndentAmount</servlet-name>
+      <url-pattern>/editIndentAmount</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>editUserInfo</servlet-name>
+      <servlet-class>servlet.EditUserInfo</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>editUserInfo</servlet-name>
+      <url-pattern>/editUserInfo</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>findAllUser</servlet-name>
+      <servlet-class>servlet.FindAllUser</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>findAllUser</servlet-name>
+      <url-pattern>/findAllUser</url-pattern>
+   </servlet-mapping> 
+    
+   <servlet>
+      <servlet-name>adminFindBooksOnCondition</servlet-name>
+      <servlet-class>servlet.AdminFindBooksOnCondition</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>adminFindBooksOnCondition</servlet-name>
+      <url-pattern>/adminFindBooksOnCondition</url-pattern>
+   </servlet-mapping> 
+   
+</web-app>
