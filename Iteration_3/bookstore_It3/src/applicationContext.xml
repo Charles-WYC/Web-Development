@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+	xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+
+	<bean id="loginAction" class="action.LoginAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean id="logoutAction" class="action.LogoutAction" scope="prototype">
+	</bean>
+	
+	<bean id="showBookAction" class="action.ShowBookAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="customerBookDetailAction" class="action.CustomerBookDetailAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="customerShowCartAction" class="action.CustomerShowCartAction" scope="prototype">
+		<property name="cartService" ref="cartService" />
+	</bean>
+	
+	<bean id="customerShowBookDetailAction" class="action.CustomerShowBookDetailAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="customerShowInfoAction" class="action.CustomerShowInfoAction" scope="prototype">
+	</bean>
+	
+	<bean id="customerShowOrderAction" class="action.CustomerShowOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="adminShowSaleroomAction" class="action.AdminShowSaleroomAction" scope="prototype">
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="addBookIntoCartAction" class="action.AddBookIntoCartAction" scope="prototype">
+		<property name="cartService" ref="cartService" />
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="customerEditBookNumberInCartAction" class="action.CustomerEditBookNumberInCartAction" scope="prototype">
+		<property name="cartService" ref="cartService" />
+		<property name="cartItemService" ref="cartItemService" />
+	</bean>
+	
+	<bean id="findBookOnConditionAction" class="action.FindBookOnConditionAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="adminShowBookDetailAction" class="action.AdminShowBookDetailAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="adminToEditBookAction" class="action.AdminToEditBookAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="adminEditBookAction" class="action.AdminEditBookAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="adminDeleteBookAction" class="action.AdminDeleteBookAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="adminShowCustomerAction" class="action.AdminShowCustomerAction" scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean>
+	
+	<bean id="adminDeliverOrderAction" class="action.AdminDeliverOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="adminEditOrderAmountAction" class="action.AdminEditOrderAmountAction" scope="prototype">
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="adminDeleteOrderAction" class="action.AdminDeleteOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="adminShowOrderAction" class="action.AdminShowOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="admindeleteCustomerAction" class="action.AdminDeleteCustomerAction" scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean>
+	
+	<bean id="editUserInfoAction" class="action.EditUserInfoAction" scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean>
+	
+	<bean id="customerRegisterAction" class="action.CustomerRegisterAction" scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean>
+	
+	<bean id="customerAddOrderAction" class="action.CustomerAddOrderAction" scope="prototype">
+		<property name="cartItemService" ref="cartItemService" />
+		<property name="orderItemService" ref="orderItemService" />
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="customerPayOrderAction" class="action.CustomerPayOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="adminAddBookAction" class="action.AdminAddBookAction" scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
+	
+	<bean id="customerConfirmOrderAction" class="action.CustomerConfirmOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="userDetailService" class="service.UserDetailServiceImpl">
+		<property name="userDetailDao" ref="userDetailDao" />
+	</bean>
+	
+	<bean id="orderItemService" class="service.OrderItemServiceImpl">
+		<property name="orderItemDao" ref="orderItemDao" />
+	</bean>
+	
+	<bean id="cartItemService" class="service.CartItemServiceImpl">
+		<property name="cartItemDao" ref="cartItemDao" />
+	</bean>
+	
+	<bean id="cartService" class="service.CartServiceImpl">
+		<property name="cartDao" ref="cartDao" />
+		<property name="cartItemService" ref="cartItemService" />
+	</bean>
+	
+	<bean id="orderService" class="service.OrderServiceImpl">
+		<property name="orderDao" ref="orderDao" />
+		<property name="bookDao" ref="bookDao" />
+	</bean>
+	
+	<bean id="bookService" class="service.BookServiceImpl">
+		<property name="bookDao" ref="bookDao" />
+		<property name="bookDetailDao" ref="bookDetailDao" />
+	</bean>
+	
+	<bean id="userService" class="service.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+		<property name="userDetailDao" ref="userDetailDao" />
+		<property name="cartService" ref="cartService" />
+	</bean>
+	
+	<bean id="orderDao" class="dao.OrderDaoImpl" />
+	
+	<bean id="cartItemDao" class="dao.CartItemDaoImpl" />
+	
+	<bean id="orderItemDao" class="dao.OrderItemDaoImpl" />
+	
+	<bean id="cartDao" class="dao.CartDaoImpl" />
+	
+	<bean id="bookDao" class="dao.BookDaoImpl" />
+	
+	<bean id="userDao" class="dao.UserDaoImpl" />
+	
+	<bean id="userDetailDao" class="dao.UserDetailDaoImpl" />
+	
+	<bean id="bookDetailDao" class="dao.BookDetailDaoImpl" />
+	
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost:3306/bookstore</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value></value>
+		</property>
+
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource">
+		</property>
+		<property name="mappingLocations" value="classpath:entity/*.hbm.xml" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="HibernateUtils" class="support.HibernateUtils">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

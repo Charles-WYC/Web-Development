@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+	"http://struts.apache.org/dtds/struts-2.1.dtd" >
+<struts>
+
+	<package name="commons" extends="struts-default" namespace="/">
+		<action name="">
+			<result>/index/index.jsp</result>
+		</action>
+		
+		<action name="showBook" class="showBookAction">
+			<result name="CustomerSuccess">/customer/showBook.jsp</result>
+			<result name="AdminSuccess">/admin/showBook.jsp</result>
+		</action>	
+		
+		<action name="login" class="loginAction">
+			<result name="success" type="redirect">showBook.action</result>
+			<result name="error">/commons/login.jsp</result>
+		</action>
+		
+		<action name="findBookOnCondition" class="findBookOnConditionAction">
+			<result name="CustomerSuccess">/customer/showBook.jsp</result>
+			<result name="AdminSuccess">/admin/showBook.jsp</result>
+		</action>
+		
+		<action name="logout" class="logoutAction">
+			<result>/index/index.jsp</result>
+		</action>
+		
+		<action name="editUserInfo" class="editUserInfoAction">
+			<result name="CustomerSuccess">/customer/showInfo.jsp</result>
+			<result name="AdminSuccess">/admin/showInfo.jsp</result>
+		</action>
+		
+		<action name="toLogin">
+			<result>/commons/login.jsp</result>
+		</action>
+		
+		<action name="toRegister">
+			<result>/customer/register.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>

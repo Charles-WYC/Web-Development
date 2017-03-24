@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+	"http://struts.apache.org/dtds/struts-2.1.dtd" >
+<struts>
+	<package name="customer" extends="struts-default" namespace="/customer">
+		
+		<action name="showCart" class="customerShowCartAction">
+			<result>/customer/showCart.jsp</result>
+		</action>		
+		<action name="addBookIntoCart" class="addBookIntoCartAction">
+			<result type="redirect">/bookstore_It3/showBook.action</result>
+		</action>		
+		<action name="showOrder" class="customerShowOrderAction">
+			<result>/customer/showOrder.jsp</result>
+		</action>		
+		<action name="showBookDetail" class="customerShowBookDetailAction">
+		</action>		
+		<action name="editBookNumberInCart" class="customerEditBookNumberInCartAction">
+			<result type="redirect">/customer/showCart.action</result>
+		</action>		
+		<action name="bookDetail" class="customerBookDetailAction">
+			<result>showBookDetail.jsp</result>
+		</action>			
+		<action name="showInfo" class="customerShowInfoAction">
+			<result>/customer/showInfo.jsp</result>
+		</action>			
+		<action name="register" class="customerRegisterAction">
+			<result name ="success" type="redirect">/bookstore_It3/showBook.action</result>
+			<result name="error">/customer/register.jsp</result>
+		</action>	
+		<action name="addOrder" class="customerAddOrderAction">
+			<result>/customer/showNewOrder.jsp</result>
+		</action>	
+		<action name="payOrder" class="customerPayOrderAction">
+			<result name="success">/customer/paySuccess.jsp</result>
+			<result name="error">/customer/payFail.jsp</result>
+		</action>	
+		<action name="confirmOrder" class="customerConfirmOrderAction">
+			<result>/customer/confirmSuccess.jsp</result>
+		</action>	
+	</package>
+</struts>

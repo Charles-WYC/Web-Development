@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="entity.BookDetail" table="book_detail" lazy="false">
+		<id name="bookID" column="bookID">
+			<generator class="foreign">
+				<param name="property">book</param>
+			</generator>
+		</id>
+		<one-to-one name="book" class="entity.Book" constrained="true" lazy="false"/>
+		<property name="author" column="author" type="string" not-null="true" />
+		<property name="publisher" column="publisher" type="string" not-null="true" />
+	</class>
+</hibernate-mapping>

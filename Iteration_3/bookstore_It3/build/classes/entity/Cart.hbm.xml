@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="entity.Cart" table="cart" lazy="false">
+		<id name="cartID" column="cartID">
+			 <generator class="native" />
+		</id> 
+		<property name="userID" column="userID" type="int" not-null="true" />
+		
+		<set name="cartItems" table="cartItem" inverse="true" lazy="false">
+			<key column="cartID" />
+			<one-to-many class="entity.CartItem" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

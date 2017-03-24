@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="entity.Order" table="indent" lazy="false">
+		<id name="orderID" column="orderID">
+			 <generator class="native" />
+		</id> 
+		
+		<many-to-one name="user" class="entity.User" column="userID" lazy="false"/>
+		
+		<property name="date" column="time" type="date" not-null="true" />
+		<property name="amount" column="amount" type="float" not-null="true" />
+		<property name="status" column="status" type="string" not-null="true" />
+		
+		<set name="orderItems" table="orderItem" inverse="true" lazy="false">
+			<key column="orderID" />
+			<one-to-many class="entity.OrderItem" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="entity.Book" table="book" lazy="false">
+		<id name="bookID" column="bookID">
+			 <generator class="native" />
+		</id>
+		<property name="price" column="price" type="float" not-null="true" />
+		<property name="quantity" column="quantity" type="int" not-null="true" />
+		<property name="book_name" column="book_name" type="string" not-null="true" />
+		<property name="sales_volume" column="sales_volume" type="int" not-null="true" />
+		<property name="category" column="category" type="string" not-null="true" />
+		<one-to-one name="bookDetail" class="entity.BookDetail" cascade="all" lazy="false"/>
+		
+		<set name="orderItems" table="orderItem" cascade="all" inverse="true" lazy="false">
+			<key column="bookID" />
+			<one-to-many class="entity.OrderItem" />
+		</set>		
+		<set name="cartItems" table="cartItem" cascade="all" inverse="true" lazy="false">
+			<key column="bookID" />
+			<one-to-many class="entity.CartItem" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

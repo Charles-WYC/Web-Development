@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="entity.User" table="user" lazy="false">
+		<id name="userID" column="userID">
+			 <generator class="native" />
+		</id>
+		<property name="username" column="username" type="string" not-null="true" />
+		<property name="password" column="password" type="string" not-null="true" />
+		<property name="mail_address" column="mail_address" type="string" not-null="true" />
+		<property name="identity" column="identity" type="string" not-null="true" />
+		<one-to-one name="userDetail" class="entity.UserDetail" cascade="delete" lazy="false"/>
+		
+		<set name="orders" table="indent" cascade="delete" inverse="true" lazy="false">
+			<key column="userID" />
+			<one-to-many class="entity.Order" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

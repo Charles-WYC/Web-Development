@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+	"http://struts.apache.org/dtds/struts-2.1.dtd" >
+<struts>
+	<package name="admin" extends="struts-default" namespace="/admin">
+		
+		<action name="addBook" class="adminAddBookAction">
+			<result type="redirect">/bookstore_It3/showBook.action</result>
+		</action>
+		<action name="showBookDetail" class="adminShowBookDetailAction">
+			<result>/admin/showBookDetail.jsp</result>
+		</action>
+		<action name="toEditBook" class="adminToEditBookAction">
+			<result>/admin/editBook.jsp</result>
+		</action>
+		<action name="showSaleroom" class="adminShowSaleroomAction">
+			<result>/admin/showSaleroom.jsp</result>
+		</action>
+		<action name="editBook" class="adminEditBookAction">
+			<result>showBookDetail.jsp</result>
+		</action>
+		<action name="deleteBook" class="adminDeleteBookAction">
+			<result type="redirect">/bookstore_It3/showBook.action</result>
+		</action>
+		<action name="deleteOrder" class="adminDeleteOrderAction">
+			<result type="redirect">showOrder.action</result>
+		</action>
+		<action name="deliverOrder" class="adminDeliverOrderAction">
+			<result type="redirect">showOrder.action</result>
+		</action>
+		<action name="editOrderAmount" class="adminEditOrderAmountAction">
+			<result type="redirect">showOrder.action</result>
+		</action>
+		<action name="showCustomer" class="adminShowCustomerAction">
+			<result>/admin/showUser.jsp</result>
+		</action>
+		<action name="deleteCustomer" class="admindeleteCustomerAction">
+			<result type="redirect">showCustomer.action</result>
+		</action>
+		<action name="showOrder" class="adminShowOrderAction">
+			<result>/admin/showOrder.jsp</result>
+		</action>
+	</package>
+
+</struts>

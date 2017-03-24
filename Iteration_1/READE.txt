@@ -1,0 +1,8 @@
+使用说明：
+1.在mysql数据库中新建名为BookStore的数据库
+2.将数据文件夹中的表格及数据导入数据库
+3.将basic文件夹放在web可直接访问的文件夹下（即localhost下）
+4.通过URL：http://localhost/basic/web/index.php 访问BookStore
+5.一些说明：
+  （1）uerdetail和bookdetail没有独立Create选项，只能在Create User和Book的同时进行创建。
+  （2）shipment存储订单中具体内容的表格

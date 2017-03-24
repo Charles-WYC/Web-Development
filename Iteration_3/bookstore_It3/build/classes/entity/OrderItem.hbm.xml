@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="entity.OrderItem" table="orderItem" lazy="false">
+		<id name="orderItemID" column="orderItemID">
+			 <generator class="native" />
+		</id> 
+		
+		<property name="number" column="number" type="int" not-null="true" />
+		<property name="total_price" column="total_price" type="float" not-null="true" />
+		
+		<many-to-one name="book" class="entity.Book" column="bookID" lazy="false"/>
+		<many-to-one name="order" class="entity.Order" column="orderID" lazy="false"/>
+		
+	</class>
+</hibernate-mapping>
